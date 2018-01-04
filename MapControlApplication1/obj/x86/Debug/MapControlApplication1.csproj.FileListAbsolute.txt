@@ -1,0 +1,16 @@
+c:\users\good_\documents\visual studio 2012\Projects\MapControlApplication1\MapControlApplication1\bin\Debug\MapControlApplication1.exe
+c:\users\good_\documents\visual studio 2012\Projects\MapControlApplication1\MapControlApplication1\bin\Debug\MapControlApplication1.pdb
+c:\users\good_\documents\visual studio 2012\Projects\MapControlApplication1\MapControlApplication1\obj\x86\Debug\MapControlApplication1.csprojResolveAssemblyReference.cache
+c:\users\good_\documents\visual studio 2012\Projects\MapControlApplication1\MapControlApplication1\obj\x86\Debug\MapControlApplication1.MainForm.resources
+c:\users\good_\documents\visual studio 2012\Projects\MapControlApplication1\MapControlApplication1\obj\x86\Debug\MapControlApplication1.Properties.Resources.resources
+c:\users\good_\documents\visual studio 2012\Projects\MapControlApplication1\MapControlApplication1\obj\x86\Debug\MapControlApplication1.csproj.GenerateResource.Cache
+c:\users\good_\documents\visual studio 2012\Projects\MapControlApplication1\MapControlApplication1\obj\x86\Debug\MapControlApplication1.exe
+c:\users\good_\documents\visual studio 2012\Projects\MapControlApplication1\MapControlApplication1\obj\x86\Debug\MapControlApplication1.pdb
+E:\kaihashitsu\VSworkspce\MapControlApplication1\MapControlApplication1\obj\x86\Debug\MapControlApplication1.exe
+E:\kaihashitsu\VSworkspce\MapControlApplication1\MapControlApplication1\obj\x86\Debug\MapControlApplication1.pdb
+E:\kaihashitsu\VSworkspce\MapControlApplication1\MapControlApplication1\obj\x86\Debug\MapControlApplication1.csprojResolveAssemblyReference.cache
+E:\kaihashitsu\VSworkspce\MapControlApplication1\MapControlApplication1\obj\x86\Debug\MapControlApplication1.MainForm.resources
+E:\kaihashitsu\VSworkspce\MapControlApplication1\MapControlApplication1\obj\x86\Debug\MapControlApplication1.Properties.Resources.resources
+E:\kaihashitsu\VSworkspce\MapControlApplication1\MapControlApplication1\obj\x86\Debug\MapControlApplication1.csproj.GenerateResource.Cache
+E:\kaihashitsu\VSworkspce\MapControlApplication1\MapControlApplication1\bin\Debug\MapControlApplication1.exe
+E:\kaihashitsu\VSworkspce\MapControlApplication1\MapControlApplication1\bin\Debug\MapControlApplication1.pdb
