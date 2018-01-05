@@ -947,8 +947,41 @@ namespace MapControlApplication1
             {
             }
         }
-        
 
+        private void btn_blueAnalyse_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                IMap map = axMapControl1.Map;
+                int layerCount = map.LayerCount;
+                IRasterLayer rstLayer = null;
+                //根据图层名获取图层
+                for (int i = 0; i < layerCount; i++)
+                {
+                    IRasterLayer tmpLayer = map.get_Layer(i) as IRasterLayer;
+                    if (tmpLayer.Name == cmb_statisticsLayer.Text)
+                    {
+                        rstLayer = tmpLayer;
+                        break;
+                    }
+                }
+                //获取栅格图层光谱波段集合
+                IRaster2 raster2 = rstLayer.Raster as IRaster2;
+                IRasterDataset rstDataset = raster2.RasterDataset;
+                IRasterBandCollection rstBandColl = rstDataset as IRasterBandCollection;
+
+                //遍历所有波段
+                int bandCount = rstLayer.BandCount;//波段总数
+                for (int i = 0; i < bandCount; i++)
+                {
+                    IRasterBand rasterBand = rstBandColl.Item(i); //获取波段
+                }
+
+            }
+            finally
+            {
+            }
+        }
         
 
 
