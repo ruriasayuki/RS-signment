@@ -12,9 +12,23 @@ using ESRI.ArcGIS.Carto;
 using ESRI.ArcGIS.Controls;
 using ESRI.ArcGIS.ADF;
 using ESRI.ArcGIS.SystemUI;
-using ESRI.ArcGIS.Geodatabase;//嵌入互操作类型:false //IWorkspaceFactory
-using ESRI.ArcGIS.Geometry;//嵌入互操作类型:false //ISpatialReferenceFactory
-using ESRI.ArcGIS.DataSourcesRaster;//嵌入互操作类型:false(->RasterWorkspaceFactoryClass) //IRasterWorkspace
+
+using ESRI.ArcGIS.Geodatabase;
+using ESRI.ArcGIS.DataSourcesRaster;
+using ESRI.ArcGIS.Geometry;
+using ESRI.ArcGIS.SpatialAnalyst;
+using ESRI.ArcGIS.GeoAnalyst;
+using ESRI.ArcGIS.Display;
+
+using ESRI.ArcGIS.DataSourcesFile;
+using ESRI.ArcGIS.Geoprocessing;
+using ESRI.ArcGIS.Geoprocessor;
+using ESRI.ArcGIS.DataManagementTools;
+using ESRI.ArcGIS.DataSourcesGDB;
+
+using ESRI.ArcGIS.Analyst3D;
+
+using System.Collections.Generic;
 
 
 namespace MapControlApplication1
@@ -24,12 +38,29 @@ namespace MapControlApplication1
         #region class private members
         private IMapControl3 m_mapControl = null;
         private string m_mapDocumentName = string.Empty;
+        private IWorkspace workspace = null;
+        private ILayer TOCRightLayer = null;    //用于存储TOC右键选中图层
+        private Color m_FromColor = Color.Red;  //初始化色块颜色（左）
+        private Color m_ToColor = Color.Blue;   //初始化色块颜色（右）
+        private bool filterBtnFirstClick = true;//自定义  用来标记清空文件夹的
+        private bool fClip = false;             //记录是否处于裁剪状态
+        private bool fExtraction = false;       //记录是否处于Extraction裁剪状态
+        private bool fLineOfSight = false;      //记录是否处于通视分析状态
+        private bool fVisibility = false;       //记录是否处于视域分析状态
+        private bool fTIN = false;              //记录是否处于TIN构建状态
+        private ITinEdit TinEdit = null;
+
         #endregion
 
         #region class constructor
         public MainForm()
         {
             InitializeComponent();
+            //色带初始化
+            m_FromColor = Color.Red;    //初始化色块颜色（左）
+            m_ToColor = Color.Blue;     //初始化色块颜色（右）
+            //！！！下面这句话以后取消注释！！！
+            //RefreshColors(m_FromColor, m_ToColor);
         }
         #endregion
 
@@ -127,7 +158,6 @@ namespace MapControlApplication1
             statusBarXY.Text = string.Format("{0}, {1}  {2}", e.mapX.ToString("#######.##"), e.mapY.ToString("#######.##"), axMapControl1.MapUnits.ToString().Substring(4));
         }
 
-        IWorkspace workspace;
         private void MI2_loadFromSDE_Click(object sender, EventArgs e)
         {
             //SDE连接数据库参数设置
@@ -582,7 +612,7 @@ namespace MapControlApplication1
 
         //***** TOCControl控件的鼠标点击事件 *****//
         //----- 鼠标点击时判断是右键则弹出菜单 -----//
-        ILayer TOCRightLayer;
+
         private void axTOCControl1_OnMouseDown(object sender, ITOCControlEvents_OnMouseDownEvent e)
         {
             try
@@ -980,6 +1010,117 @@ namespace MapControlApplication1
             }
             finally
             {
+            }
+        }
+
+
+        public static void funColorForRaster_Classify(IRasterLayer pRasterLayer)
+        {
+            IRasterClassifyColorRampRenderer ClassifyColor = new RasterClassifyColorRampRendererClass();
+            IRasterRenderer RasterRender = ClassifyColor as IRasterRenderer;
+            RasterRender.Raster = pRasterLayer.Raster;
+            RasterRender.Update();
+
+            //断点设置  
+            ClassifyColor.ClassCount = 6;
+            ClassifyColor.set_Break(0, -1);
+            ClassifyColor.set_Break(1, 40);
+            ClassifyColor.set_Break(2, 60);
+            ClassifyColor.set_Break(3, 80);
+            ClassifyColor.set_Break(4, 100);
+            ClassifyColor.set_Break(5, 120);
+            ClassifyColor.set_Break(6, 140);
+
+            //各个分类的颜色设置  
+            IFillSymbol Symbol = new SimpleFillSymbolClass() as IFillSymbol;
+            IRgbColor tColor = new RgbColorClass();  
+            tColor.Red = 135;//天蓝色  
+            tColor.Green = 206;  
+            tColor.Blue = 235;
+            Symbol.Color = tColor;
+            ClassifyColor.set_Symbol(0, Symbol as ISymbol);
+            tColor.Red = 135;//天蓝色  
+            tColor.Green = 206;
+            tColor.Blue = 124;
+            Symbol.Color = tColor;
+            ClassifyColor.set_Symbol(1, Symbol as ISymbol);
+            tColor.Red = 100;//天蓝色  
+            tColor.Green = 206;
+            tColor.Blue = 103;
+            Symbol.Color = tColor;
+            ClassifyColor.set_Symbol(2, Symbol as ISymbol);
+            tColor.Red = 70;//天蓝色  
+            tColor.Green = 220;
+            tColor.Blue = 60;
+            Symbol.Color = tColor;
+            ClassifyColor.set_Symbol(3, Symbol as ISymbol);
+            tColor.Red = 60;//天蓝色  
+            tColor.Green = 236;
+            tColor.Blue = 50;
+            Symbol.Color = tColor;
+            ClassifyColor.set_Symbol(4, Symbol as ISymbol);
+            tColor.Red = 35;//天蓝色  
+            tColor.Green = 255;
+            tColor.Blue = 50;
+            Symbol.Color = tColor;
+            ClassifyColor.set_Symbol(5, Symbol as ISymbol);
+
+            pRasterLayer.Renderer = RasterRender;
+
+            //label的设置,一定要放在RasterLayer.Renderer = RasterRender这句后面，否则无效  
+            string str1 = "";
+            string str2 = "";
+            string str3 = "";
+            string str4 = "";
+            string str5 = "";
+            ClassifyColor.set_Label(0, "-1 - " + str1);
+            ClassifyColor.set_Label(1, str1 + " - " + str2);
+            ClassifyColor.set_Label(2, str2 + " - " + str3);
+            ClassifyColor.set_Label(3, str3 + " - " + str4);
+            ClassifyColor.set_Label(4, str4 + " - " + str5);
+            ClassifyColor.set_Label(5, str5 + " - 1");
+
+            ILayerEffects layereffects = pRasterLayer as ILayerEffects;//栅格的半透明显示  
+            layereffects.Transparency = 50;  
+        }
+        
+
+        //栅格图像重新渲染测试
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.WaitCursor;//单击时修改鼠标光标形状
+            try
+            {
+                IMap map = axMapControl1.Map;
+                int layerCount = map.LayerCount;
+                IRasterLayer rstLayer = null;
+                //根据图层名获取图层
+                for (int i = 0; i < layerCount; i++)
+                {
+                    IRasterLayer tmpLayer = map.get_Layer(i) as IRasterLayer;
+                    if (tmpLayer.Name == cmb_statisticsLayer.Text)
+                    {
+                        rstLayer = tmpLayer;
+                        break;
+                    }
+                }
+                //获取栅格图层光谱波段集合
+                IRaster2 raster2 = rstLayer.Raster as IRaster2;
+                IRasterDataset rstDataset = raster2.RasterDataset;
+                IRasterBandCollection rstBandColl = rstDataset as IRasterBandCollection;
+
+                funColorForRaster_Classify(rstLayer);
+
+            }
+            catch (System.Exception ex)//异常处理
+            {
+                MessageBox.Show(ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                axMapControl1.Refresh();
+                this.axTOCControl1.Update();
+                this.Cursor = Cursors.Default;
             }
         }
         

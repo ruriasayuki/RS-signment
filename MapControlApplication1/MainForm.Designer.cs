@@ -115,47 +115,49 @@ namespace MapControlApplication1
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.cms_TOCRightMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.tsmi_zoomToLayer = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmi_deleteLayer = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox12 = new System.Windows.Forms.GroupBox();
-            this.button10 = new System.Windows.Forms.Button();
-            this.comboBox9 = new System.Windows.Forms.ComboBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.groupBox13 = new System.Windows.Forms.GroupBox();
-            this.button11 = new System.Windows.Forms.Button();
-            this.comboBox11 = new System.Windows.Forms.ComboBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.button8 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
+            this.groupBox15 = new System.Windows.Forms.GroupBox();
+            this.button14 = new System.Windows.Forms.Button();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.button13 = new System.Windows.Forms.Button();
+            this.comboBox18 = new System.Windows.Forms.ComboBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.groupBox14 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.button12 = new System.Windows.Forms.Button();
+            this.comboBox15 = new System.Windows.Forms.ComboBox();
+            this.comboBox16 = new System.Windows.Forms.ComboBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.button9 = new System.Windows.Forms.Button();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.groupBox14 = new System.Windows.Forms.GroupBox();
-            this.button12 = new System.Windows.Forms.Button();
-            this.comboBox15 = new System.Windows.Forms.ComboBox();
-            this.comboBox16 = new System.Windows.Forms.ComboBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.groupBox15 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.button13 = new System.Windows.Forms.Button();
-            this.comboBox18 = new System.Windows.Forms.ComboBox();
-            this.label31 = new System.Windows.Forms.Label();
-            this.button14 = new System.Windows.Forms.Button();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.button8 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button11 = new System.Windows.Forms.Button();
+            this.comboBox11 = new System.Windows.Forms.ComboBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.button10 = new System.Windows.Forms.Button();
+            this.comboBox9 = new System.Windows.Forms.ComboBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.cms_TOCRightMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmi_zoomToLayer = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmi_deleteLayer = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axMapControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axToolbarControl1)).BeginInit();
@@ -178,13 +180,14 @@ namespace MapControlApplication1
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            this.cms_TOCRightMenu.SuspendLayout();
-            this.groupBox12.SuspendLayout();
-            this.groupBox13.SuspendLayout();
-            this.groupBox10.SuspendLayout();
-            this.groupBox11.SuspendLayout();
-            this.groupBox14.SuspendLayout();
             this.groupBox15.SuspendLayout();
+            this.groupBox14.SuspendLayout();
+            this.groupBox11.SuspendLayout();
+            this.groupBox10.SuspendLayout();
+            this.groupBox13.SuspendLayout();
+            this.groupBox12.SuspendLayout();
+            this.cms_TOCRightMenu.SuspendLayout();
+            this.tabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -346,6 +349,7 @@ namespace MapControlApplication1
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Right;
             this.tabControl1.Location = new System.Drawing.Point(611, 53);
             this.tabControl1.Name = "tabControl1";
@@ -1004,199 +1008,156 @@ namespace MapControlApplication1
             this.tabPage3.Text = "图像分析";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // tabPage4
+            // groupBox15
             // 
-            this.tabPage4.BackColor = System.Drawing.Color.White;
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(240, 504);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "空间分析";
+            this.groupBox15.Controls.Add(this.button14);
+            this.groupBox15.Controls.Add(this.textBox3);
+            this.groupBox15.Controls.Add(this.label29);
+            this.groupBox15.Controls.Add(this.button13);
+            this.groupBox15.Controls.Add(this.comboBox18);
+            this.groupBox15.Controls.Add(this.label31);
+            this.groupBox15.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.groupBox15.Location = new System.Drawing.Point(15, 396);
+            this.groupBox15.Name = "groupBox15";
+            this.groupBox15.Size = new System.Drawing.Size(210, 76);
+            this.groupBox15.TabIndex = 14;
+            this.groupBox15.TabStop = false;
+            this.groupBox15.Text = "图像分类";
             // 
-            // cms_TOCRightMenu
+            // button14
             // 
-            this.cms_TOCRightMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmi_zoomToLayer,
-            this.tsmi_deleteLayer});
-            this.cms_TOCRightMenu.Name = "cms_TOCRightMenu";
-            this.cms_TOCRightMenu.Size = new System.Drawing.Size(161, 48);
+            this.button14.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button14.Location = new System.Drawing.Point(8, 46);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(94, 20);
+            this.button14.TabIndex = 7;
+            this.button14.Text = "分类";
+            this.button14.UseVisualStyleBackColor = true;
             // 
-            // tsmi_zoomToLayer
+            // textBox3
             // 
-            this.tsmi_zoomToLayer.Name = "tsmi_zoomToLayer";
-            this.tsmi_zoomToLayer.Size = new System.Drawing.Size(160, 22);
-            this.tsmi_zoomToLayer.Text = "缩放至当前图层";
-            this.tsmi_zoomToLayer.Click += new System.EventHandler(this.tsmi_zoomToLayer_Click);
+            this.textBox3.Location = new System.Drawing.Point(166, 19);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(34, 21);
+            this.textBox3.TabIndex = 6;
             // 
-            // tsmi_deleteLayer
+            // label29
             // 
-            this.tsmi_deleteLayer.Name = "tsmi_deleteLayer";
-            this.tsmi_deleteLayer.Size = new System.Drawing.Size(160, 22);
-            this.tsmi_deleteLayer.Text = "删除图层";
-            this.tsmi_deleteLayer.Click += new System.EventHandler(this.tsmi_deleteLayer_Click);
+            this.label29.AutoSize = true;
+            this.label29.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label29.Location = new System.Drawing.Point(135, 24);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(29, 12);
+            this.label29.TabIndex = 5;
+            this.label29.Text = "数量";
             // 
-            // groupBox12
+            // button13
             // 
-            this.groupBox12.Controls.Add(this.button10);
-            this.groupBox12.Controls.Add(this.comboBox9);
-            this.groupBox12.Controls.Add(this.label24);
-            this.groupBox12.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.groupBox12.Location = new System.Drawing.Point(15, 176);
-            this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(210, 50);
-            this.groupBox12.TabIndex = 9;
-            this.groupBox12.TabStop = false;
-            this.groupBox12.Text = "图像镶嵌";
+            this.button13.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button13.Location = new System.Drawing.Point(106, 46);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(94, 20);
+            this.button13.TabIndex = 4;
+            this.button13.Text = "分类后处理";
+            this.button13.UseVisualStyleBackColor = true;
             // 
-            // button10
+            // comboBox18
             // 
-            this.button10.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button10.Location = new System.Drawing.Point(151, 20);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(49, 20);
-            this.button10.TabIndex = 7;
-            this.button10.Text = "镶嵌";
-            this.button10.UseVisualStyleBackColor = true;
+            this.comboBox18.FormattingEnabled = true;
+            this.comboBox18.Location = new System.Drawing.Point(38, 20);
+            this.comboBox18.Name = "comboBox18";
+            this.comboBox18.Size = new System.Drawing.Size(94, 20);
+            this.comboBox18.TabIndex = 2;
             // 
-            // comboBox9
+            // label31
             // 
-            this.comboBox9.FormattingEnabled = true;
-            this.comboBox9.Location = new System.Drawing.Point(59, 19);
-            this.comboBox9.Name = "comboBox9";
-            this.comboBox9.Size = new System.Drawing.Size(86, 20);
-            this.comboBox9.TabIndex = 4;
+            this.label31.AutoSize = true;
+            this.label31.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label31.Location = new System.Drawing.Point(6, 24);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(29, 12);
+            this.label31.TabIndex = 0;
+            this.label31.Text = "图层";
             // 
-            // label24
+            // groupBox14
             // 
-            this.label24.AutoSize = true;
-            this.label24.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label24.Location = new System.Drawing.Point(6, 23);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(53, 12);
-            this.label24.TabIndex = 3;
-            this.label24.Text = "栅格目录";
+            this.groupBox14.Controls.Add(this.textBox1);
+            this.groupBox14.Controls.Add(this.label28);
+            this.groupBox14.Controls.Add(this.button12);
+            this.groupBox14.Controls.Add(this.comboBox15);
+            this.groupBox14.Controls.Add(this.comboBox16);
+            this.groupBox14.Controls.Add(this.label26);
+            this.groupBox14.Controls.Add(this.label27);
+            this.groupBox14.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.groupBox14.Location = new System.Drawing.Point(15, 314);
+            this.groupBox14.Name = "groupBox14";
+            this.groupBox14.Size = new System.Drawing.Size(210, 76);
+            this.groupBox14.TabIndex = 13;
+            this.groupBox14.TabStop = false;
+            this.groupBox14.Text = "图像变换";
             // 
-            // groupBox13
+            // textBox1
             // 
-            this.groupBox13.Controls.Add(this.textBox2);
-            this.groupBox13.Controls.Add(this.button11);
-            this.groupBox13.Controls.Add(this.comboBox11);
-            this.groupBox13.Controls.Add(this.label23);
-            this.groupBox13.Controls.Add(this.label25);
-            this.groupBox13.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.groupBox13.Location = new System.Drawing.Point(15, 12);
-            this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(210, 76);
-            this.groupBox13.TabIndex = 10;
-            this.groupBox13.TabStop = false;
-            this.groupBox13.Text = "图像裁剪";
+            this.textBox1.Location = new System.Drawing.Point(166, 19);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(34, 21);
+            this.textBox1.TabIndex = 6;
             // 
-            // button11
+            // label28
             // 
-            this.button11.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button11.Location = new System.Drawing.Point(151, 20);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(49, 46);
-            this.button11.TabIndex = 4;
-            this.button11.Text = "裁剪";
-            this.button11.UseVisualStyleBackColor = true;
+            this.label28.AutoSize = true;
+            this.label28.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label28.Location = new System.Drawing.Point(135, 24);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(29, 12);
+            this.label28.TabIndex = 5;
+            this.label28.Text = "角度";
             // 
-            // comboBox11
+            // button12
             // 
-            this.comboBox11.FormattingEnabled = true;
-            this.comboBox11.Location = new System.Drawing.Point(38, 20);
-            this.comboBox11.Name = "comboBox11";
-            this.comboBox11.Size = new System.Drawing.Size(107, 20);
-            this.comboBox11.TabIndex = 2;
+            this.button12.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button12.Location = new System.Drawing.Point(151, 46);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(49, 20);
+            this.button12.TabIndex = 4;
+            this.button12.Text = "变换";
+            this.button12.UseVisualStyleBackColor = true;
             // 
-            // label23
+            // comboBox15
             // 
-            this.label23.AutoSize = true;
-            this.label23.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label23.Location = new System.Drawing.Point(6, 50);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(29, 12);
-            this.label23.TabIndex = 1;
-            this.label23.Text = "矢量";
+            this.comboBox15.FormattingEnabled = true;
+            this.comboBox15.Location = new System.Drawing.Point(38, 46);
+            this.comboBox15.Name = "comboBox15";
+            this.comboBox15.Size = new System.Drawing.Size(107, 20);
+            this.comboBox15.TabIndex = 3;
             // 
-            // label25
+            // comboBox16
             // 
-            this.label25.AutoSize = true;
-            this.label25.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label25.Location = new System.Drawing.Point(6, 24);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(29, 12);
-            this.label25.TabIndex = 0;
-            this.label25.Text = "图层";
+            this.comboBox16.FormattingEnabled = true;
+            this.comboBox16.Location = new System.Drawing.Point(38, 20);
+            this.comboBox16.Name = "comboBox16";
+            this.comboBox16.Size = new System.Drawing.Size(94, 20);
+            this.comboBox16.TabIndex = 2;
             // 
-            // textBox2
+            // label26
             // 
-            this.textBox2.Location = new System.Drawing.Point(38, 45);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(107, 21);
-            this.textBox2.TabIndex = 7;
+            this.label26.AutoSize = true;
+            this.label26.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label26.Location = new System.Drawing.Point(6, 50);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(29, 12);
+            this.label26.TabIndex = 1;
+            this.label26.Text = "方式";
             // 
-            // groupBox10
+            // label27
             // 
-            this.groupBox10.Controls.Add(this.button8);
-            this.groupBox10.Controls.Add(this.comboBox1);
-            this.groupBox10.Controls.Add(this.comboBox6);
-            this.groupBox10.Controls.Add(this.label19);
-            this.groupBox10.Controls.Add(this.label20);
-            this.groupBox10.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.groupBox10.Location = new System.Drawing.Point(15, 94);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(210, 76);
-            this.groupBox10.TabIndex = 11;
-            this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "全色锐化(融合)";
-            // 
-            // button8
-            // 
-            this.button8.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button8.Location = new System.Drawing.Point(151, 20);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(49, 46);
-            this.button8.TabIndex = 4;
-            this.button8.Text = "融合";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(47, 46);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(98, 20);
-            this.comboBox1.TabIndex = 3;
-            // 
-            // comboBox6
-            // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(47, 20);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(98, 20);
-            this.comboBox6.TabIndex = 2;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label19.Location = new System.Drawing.Point(6, 50);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(41, 12);
-            this.label19.TabIndex = 1;
-            this.label19.Text = "多波段";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label20.Location = new System.Drawing.Point(6, 24);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(41, 12);
-            this.label20.TabIndex = 0;
-            this.label20.Text = "单波段";
+            this.label27.AutoSize = true;
+            this.label27.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label27.Location = new System.Drawing.Point(6, 24);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(29, 12);
+            this.label27.TabIndex = 0;
+            this.label27.Text = "图层";
             // 
             // groupBox11
             // 
@@ -1259,156 +1220,220 @@ namespace MapControlApplication1
             this.label22.TabIndex = 0;
             this.label22.Text = "图层";
             // 
-            // groupBox14
+            // groupBox10
             // 
-            this.groupBox14.Controls.Add(this.textBox1);
-            this.groupBox14.Controls.Add(this.label28);
-            this.groupBox14.Controls.Add(this.button12);
-            this.groupBox14.Controls.Add(this.comboBox15);
-            this.groupBox14.Controls.Add(this.comboBox16);
-            this.groupBox14.Controls.Add(this.label26);
-            this.groupBox14.Controls.Add(this.label27);
-            this.groupBox14.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.groupBox14.Location = new System.Drawing.Point(15, 314);
-            this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Size = new System.Drawing.Size(210, 76);
-            this.groupBox14.TabIndex = 13;
-            this.groupBox14.TabStop = false;
-            this.groupBox14.Text = "图像变换";
+            this.groupBox10.Controls.Add(this.button8);
+            this.groupBox10.Controls.Add(this.comboBox1);
+            this.groupBox10.Controls.Add(this.comboBox6);
+            this.groupBox10.Controls.Add(this.label19);
+            this.groupBox10.Controls.Add(this.label20);
+            this.groupBox10.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.groupBox10.Location = new System.Drawing.Point(15, 94);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(210, 76);
+            this.groupBox10.TabIndex = 11;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "全色锐化(融合)";
             // 
-            // button12
+            // button8
             // 
-            this.button12.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button12.Location = new System.Drawing.Point(151, 46);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(49, 20);
-            this.button12.TabIndex = 4;
-            this.button12.Text = "变换";
-            this.button12.UseVisualStyleBackColor = true;
+            this.button8.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button8.Location = new System.Drawing.Point(151, 20);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(49, 46);
+            this.button8.TabIndex = 4;
+            this.button8.Text = "融合";
+            this.button8.UseVisualStyleBackColor = true;
             // 
-            // comboBox15
+            // comboBox1
             // 
-            this.comboBox15.FormattingEnabled = true;
-            this.comboBox15.Location = new System.Drawing.Point(38, 46);
-            this.comboBox15.Name = "comboBox15";
-            this.comboBox15.Size = new System.Drawing.Size(107, 20);
-            this.comboBox15.TabIndex = 3;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(47, 46);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(98, 20);
+            this.comboBox1.TabIndex = 3;
             // 
-            // comboBox16
+            // comboBox6
             // 
-            this.comboBox16.FormattingEnabled = true;
-            this.comboBox16.Location = new System.Drawing.Point(38, 20);
-            this.comboBox16.Name = "comboBox16";
-            this.comboBox16.Size = new System.Drawing.Size(94, 20);
-            this.comboBox16.TabIndex = 2;
+            this.comboBox6.FormattingEnabled = true;
+            this.comboBox6.Location = new System.Drawing.Point(47, 20);
+            this.comboBox6.Name = "comboBox6";
+            this.comboBox6.Size = new System.Drawing.Size(98, 20);
+            this.comboBox6.TabIndex = 2;
             // 
-            // label26
+            // label19
             // 
-            this.label26.AutoSize = true;
-            this.label26.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label26.Location = new System.Drawing.Point(6, 50);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(29, 12);
-            this.label26.TabIndex = 1;
-            this.label26.Text = "方式";
+            this.label19.AutoSize = true;
+            this.label19.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label19.Location = new System.Drawing.Point(6, 50);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(41, 12);
+            this.label19.TabIndex = 1;
+            this.label19.Text = "多波段";
             // 
-            // label27
+            // label20
             // 
-            this.label27.AutoSize = true;
-            this.label27.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label27.Location = new System.Drawing.Point(6, 24);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(29, 12);
-            this.label27.TabIndex = 0;
-            this.label27.Text = "图层";
+            this.label20.AutoSize = true;
+            this.label20.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label20.Location = new System.Drawing.Point(6, 24);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(41, 12);
+            this.label20.TabIndex = 0;
+            this.label20.Text = "单波段";
             // 
-            // label28
+            // groupBox13
             // 
-            this.label28.AutoSize = true;
-            this.label28.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label28.Location = new System.Drawing.Point(135, 24);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(29, 12);
-            this.label28.TabIndex = 5;
-            this.label28.Text = "角度";
+            this.groupBox13.Controls.Add(this.textBox2);
+            this.groupBox13.Controls.Add(this.button11);
+            this.groupBox13.Controls.Add(this.comboBox11);
+            this.groupBox13.Controls.Add(this.label23);
+            this.groupBox13.Controls.Add(this.label25);
+            this.groupBox13.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.groupBox13.Location = new System.Drawing.Point(15, 12);
+            this.groupBox13.Name = "groupBox13";
+            this.groupBox13.Size = new System.Drawing.Size(210, 76);
+            this.groupBox13.TabIndex = 10;
+            this.groupBox13.TabStop = false;
+            this.groupBox13.Text = "图像裁剪";
             // 
-            // textBox1
+            // textBox2
             // 
-            this.textBox1.Location = new System.Drawing.Point(166, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(34, 21);
-            this.textBox1.TabIndex = 6;
+            this.textBox2.Location = new System.Drawing.Point(38, 45);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(107, 21);
+            this.textBox2.TabIndex = 7;
             // 
-            // groupBox15
+            // button11
             // 
-            this.groupBox15.Controls.Add(this.button14);
-            this.groupBox15.Controls.Add(this.textBox3);
-            this.groupBox15.Controls.Add(this.label29);
-            this.groupBox15.Controls.Add(this.button13);
-            this.groupBox15.Controls.Add(this.comboBox18);
-            this.groupBox15.Controls.Add(this.label31);
-            this.groupBox15.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.groupBox15.Location = new System.Drawing.Point(15, 396);
-            this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(210, 76);
-            this.groupBox15.TabIndex = 14;
-            this.groupBox15.TabStop = false;
-            this.groupBox15.Text = "图像分类";
+            this.button11.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button11.Location = new System.Drawing.Point(151, 20);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(49, 46);
+            this.button11.TabIndex = 4;
+            this.button11.Text = "裁剪";
+            this.button11.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // comboBox11
             // 
-            this.textBox3.Location = new System.Drawing.Point(166, 19);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(34, 21);
-            this.textBox3.TabIndex = 6;
+            this.comboBox11.FormattingEnabled = true;
+            this.comboBox11.Location = new System.Drawing.Point(38, 20);
+            this.comboBox11.Name = "comboBox11";
+            this.comboBox11.Size = new System.Drawing.Size(107, 20);
+            this.comboBox11.TabIndex = 2;
             // 
-            // label29
+            // label23
             // 
-            this.label29.AutoSize = true;
-            this.label29.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label29.Location = new System.Drawing.Point(135, 24);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(29, 12);
-            this.label29.TabIndex = 5;
-            this.label29.Text = "数量";
+            this.label23.AutoSize = true;
+            this.label23.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label23.Location = new System.Drawing.Point(6, 50);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(29, 12);
+            this.label23.TabIndex = 1;
+            this.label23.Text = "矢量";
             // 
-            // button13
+            // label25
             // 
-            this.button13.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button13.Location = new System.Drawing.Point(106, 46);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(94, 20);
-            this.button13.TabIndex = 4;
-            this.button13.Text = "分类后处理";
-            this.button13.UseVisualStyleBackColor = true;
+            this.label25.AutoSize = true;
+            this.label25.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label25.Location = new System.Drawing.Point(6, 24);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(29, 12);
+            this.label25.TabIndex = 0;
+            this.label25.Text = "图层";
             // 
-            // comboBox18
+            // groupBox12
             // 
-            this.comboBox18.FormattingEnabled = true;
-            this.comboBox18.Location = new System.Drawing.Point(38, 20);
-            this.comboBox18.Name = "comboBox18";
-            this.comboBox18.Size = new System.Drawing.Size(94, 20);
-            this.comboBox18.TabIndex = 2;
+            this.groupBox12.Controls.Add(this.button10);
+            this.groupBox12.Controls.Add(this.comboBox9);
+            this.groupBox12.Controls.Add(this.label24);
+            this.groupBox12.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.groupBox12.Location = new System.Drawing.Point(15, 176);
+            this.groupBox12.Name = "groupBox12";
+            this.groupBox12.Size = new System.Drawing.Size(210, 50);
+            this.groupBox12.TabIndex = 9;
+            this.groupBox12.TabStop = false;
+            this.groupBox12.Text = "图像镶嵌";
             // 
-            // label31
+            // button10
             // 
-            this.label31.AutoSize = true;
-            this.label31.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label31.Location = new System.Drawing.Point(6, 24);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(29, 12);
-            this.label31.TabIndex = 0;
-            this.label31.Text = "图层";
+            this.button10.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button10.Location = new System.Drawing.Point(151, 20);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(49, 20);
+            this.button10.TabIndex = 7;
+            this.button10.Text = "镶嵌";
+            this.button10.UseVisualStyleBackColor = true;
             // 
-            // button14
+            // comboBox9
             // 
-            this.button14.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button14.Location = new System.Drawing.Point(8, 46);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(94, 20);
-            this.button14.TabIndex = 7;
-            this.button14.Text = "分类";
-            this.button14.UseVisualStyleBackColor = true;
+            this.comboBox9.FormattingEnabled = true;
+            this.comboBox9.Location = new System.Drawing.Point(59, 19);
+            this.comboBox9.Name = "comboBox9";
+            this.comboBox9.Size = new System.Drawing.Size(86, 20);
+            this.comboBox9.TabIndex = 4;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label24.Location = new System.Drawing.Point(6, 23);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(53, 12);
+            this.label24.TabIndex = 3;
+            this.label24.Text = "栅格目录";
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.BackColor = System.Drawing.Color.White;
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(240, 504);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "空间分析";
+            // 
+            // cms_TOCRightMenu
+            // 
+            this.cms_TOCRightMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmi_zoomToLayer,
+            this.tsmi_deleteLayer});
+            this.cms_TOCRightMenu.Name = "cms_TOCRightMenu";
+            this.cms_TOCRightMenu.Size = new System.Drawing.Size(161, 48);
+            // 
+            // tsmi_zoomToLayer
+            // 
+            this.tsmi_zoomToLayer.Name = "tsmi_zoomToLayer";
+            this.tsmi_zoomToLayer.Size = new System.Drawing.Size(160, 22);
+            this.tsmi_zoomToLayer.Text = "缩放至当前图层";
+            this.tsmi_zoomToLayer.Click += new System.EventHandler(this.tsmi_zoomToLayer_Click);
+            // 
+            // tsmi_deleteLayer
+            // 
+            this.tsmi_deleteLayer.Name = "tsmi_deleteLayer";
+            this.tsmi_deleteLayer.Size = new System.Drawing.Size(160, 22);
+            this.tsmi_deleteLayer.Text = "删除图层";
+            this.tsmi_deleteLayer.Click += new System.EventHandler(this.tsmi_deleteLayer_Click);
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.button1);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(240, 504);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "tabPage5";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(65, 27);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MainForm
             // 
@@ -1461,19 +1486,20 @@ namespace MapControlApplication1
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.tabPage3.ResumeLayout(false);
-            this.cms_TOCRightMenu.ResumeLayout(false);
-            this.groupBox12.ResumeLayout(false);
-            this.groupBox12.PerformLayout();
-            this.groupBox13.ResumeLayout(false);
-            this.groupBox13.PerformLayout();
-            this.groupBox10.ResumeLayout(false);
-            this.groupBox10.PerformLayout();
-            this.groupBox11.ResumeLayout(false);
-            this.groupBox11.PerformLayout();
-            this.groupBox14.ResumeLayout(false);
-            this.groupBox14.PerformLayout();
             this.groupBox15.ResumeLayout(false);
             this.groupBox15.PerformLayout();
+            this.groupBox14.ResumeLayout(false);
+            this.groupBox14.PerformLayout();
+            this.groupBox11.ResumeLayout(false);
+            this.groupBox11.PerformLayout();
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox10.PerformLayout();
+            this.groupBox13.ResumeLayout(false);
+            this.groupBox13.PerformLayout();
+            this.groupBox12.ResumeLayout(false);
+            this.groupBox12.PerformLayout();
+            this.cms_TOCRightMenu.ResumeLayout(false);
+            this.tabPage5.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1602,6 +1628,8 @@ namespace MapControlApplication1
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.ComboBox comboBox9;
         private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.Button button1;
     }
 }
 
