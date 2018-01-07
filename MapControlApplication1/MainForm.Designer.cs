@@ -153,11 +153,18 @@ namespace MapControlApplication1
             this.comboBox9 = new System.Windows.Forms.ComboBox();
             this.label24 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.groupBox16 = new System.Windows.Forms.GroupBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.comboBox_B3 = new System.Windows.Forms.ComboBox();
+            this.B4闭值40判定法 = new System.Windows.Forms.Button();
             this.cms_TOCRightMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmi_zoomToLayer = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_deleteLayer = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
+            this.label33 = new System.Windows.Forms.Label();
+            this.comboBox_B4 = new System.Windows.Forms.ComboBox();
+            this.comboBox_B5 = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axMapControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axToolbarControl1)).BeginInit();
@@ -186,8 +193,9 @@ namespace MapControlApplication1
             this.groupBox10.SuspendLayout();
             this.groupBox13.SuspendLayout();
             this.groupBox12.SuspendLayout();
-            this.cms_TOCRightMenu.SuspendLayout();
             this.tabPage5.SuspendLayout();
+            this.groupBox16.SuspendLayout();
+            this.cms_TOCRightMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -1392,6 +1400,72 @@ namespace MapControlApplication1
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "空间分析";
             // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.groupBox16);
+            this.tabPage5.Controls.Add(this.B4闭值40判定法);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(240, 504);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "太湖蓝藻";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // groupBox16
+            // 
+            this.groupBox16.Controls.Add(this.comboBox_B5);
+            this.groupBox16.Controls.Add(this.label33);
+            this.groupBox16.Controls.Add(this.comboBox_B4);
+            this.groupBox16.Controls.Add(this.label30);
+            this.groupBox16.Controls.Add(this.label32);
+            this.groupBox16.Controls.Add(this.comboBox_B3);
+            this.groupBox16.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.groupBox16.Location = new System.Drawing.Point(6, 6);
+            this.groupBox16.Name = "groupBox16";
+            this.groupBox16.Size = new System.Drawing.Size(210, 136);
+            this.groupBox16.TabIndex = 2;
+            this.groupBox16.TabStop = false;
+            this.groupBox16.Text = "选择输入";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label30.Location = new System.Drawing.Point(13, 61);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(35, 12);
+            this.label30.TabIndex = 2;
+            this.label30.Text = "Band4";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label32.Location = new System.Drawing.Point(13, 28);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(35, 12);
+            this.label32.TabIndex = 1;
+            this.label32.Text = "Band3";
+            // 
+            // comboBox_B3
+            // 
+            this.comboBox_B3.FormattingEnabled = true;
+            this.comboBox_B3.Location = new System.Drawing.Point(67, 24);
+            this.comboBox_B3.Name = "comboBox_B3";
+            this.comboBox_B3.Size = new System.Drawing.Size(128, 20);
+            this.comboBox_B3.TabIndex = 0;
+            // 
+            // B4闭值40判定法
+            // 
+            this.B4闭值40判定法.Location = new System.Drawing.Point(73, 148);
+            this.B4闭值40判定法.Name = "B4闭值40判定法";
+            this.B4闭值40判定法.Size = new System.Drawing.Size(75, 23);
+            this.B4闭值40判定法.TabIndex = 0;
+            this.B4闭值40判定法.Text = "button1";
+            this.B4闭值40判定法.UseVisualStyleBackColor = true;
+            this.B4闭值40判定法.Click += new System.EventHandler(this.button1_Click);
+            // 
             // cms_TOCRightMenu
             // 
             this.cms_TOCRightMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1414,26 +1488,31 @@ namespace MapControlApplication1
             this.tsmi_deleteLayer.Text = "删除图层";
             this.tsmi_deleteLayer.Click += new System.EventHandler(this.tsmi_deleteLayer_Click);
             // 
-            // tabPage5
+            // label33
             // 
-            this.tabPage5.Controls.Add(this.button1);
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(240, 504);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "tabPage5";
-            this.tabPage5.UseVisualStyleBackColor = true;
+            this.label33.AutoSize = true;
+            this.label33.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label33.Location = new System.Drawing.Point(13, 96);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(35, 12);
+            this.label33.TabIndex = 4;
+            this.label33.Text = "Band5";
             // 
-            // button1
+            // comboBox_B4
             // 
-            this.button1.Location = new System.Drawing.Point(65, 27);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.comboBox_B4.FormattingEnabled = true;
+            this.comboBox_B4.Location = new System.Drawing.Point(67, 57);
+            this.comboBox_B4.Name = "comboBox_B4";
+            this.comboBox_B4.Size = new System.Drawing.Size(128, 20);
+            this.comboBox_B4.TabIndex = 3;
+            // 
+            // comboBox_B5
+            // 
+            this.comboBox_B5.FormattingEnabled = true;
+            this.comboBox_B5.Location = new System.Drawing.Point(67, 93);
+            this.comboBox_B5.Name = "comboBox_B5";
+            this.comboBox_B5.Size = new System.Drawing.Size(128, 20);
+            this.comboBox_B5.TabIndex = 5;
             // 
             // MainForm
             // 
@@ -1498,8 +1577,10 @@ namespace MapControlApplication1
             this.groupBox13.PerformLayout();
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
-            this.cms_TOCRightMenu.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
+            this.groupBox16.ResumeLayout(false);
+            this.groupBox16.PerformLayout();
+            this.cms_TOCRightMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1629,7 +1710,14 @@ namespace MapControlApplication1
         private System.Windows.Forms.ComboBox comboBox9;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button B4闭值40判定法;
+        private System.Windows.Forms.GroupBox groupBox16;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.ComboBox comboBox_B3;
+        private System.Windows.Forms.ComboBox comboBox_B5;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.ComboBox comboBox_B4;
     }
 }
 

@@ -225,17 +225,29 @@ namespace MapControlApplication1
                 //清除栅格图像下拉框里面的选项
                 cmb_loadRstDataset.Items.Clear();
                 cmb_loadRstDataset.Text = "";
+                comboBox_B3.Items.Clear();
+                comboBox_B3.Text = "";
+                comboBox_B4.Items.Clear();
+                comboBox_B4.Text = "";
+                comboBox_B5.Items.Clear();
+                comboBox_B5.Text = "";
                 //获取非栅格目录(工作空间)中的栅格图像
                 enumDatasetName = workspace.get_DatasetNames(esriDatasetType.esriDTRasterDataset);
                 datasetName = enumDatasetName.Next();
                 while (datasetName != null)
                 {
                     cmb_loadRstDataset.Items.Add(datasetName.Name.Substring(datasetName.Name.LastIndexOf(".") + 1));
+                    comboBox_B3.Items.Add(datasetName.Name.Substring(datasetName.Name.LastIndexOf(".") + 1));
+                    comboBox_B4.Items.Add(datasetName.Name.Substring(datasetName.Name.LastIndexOf(".") + 1));
+                    comboBox_B5.Items.Add(datasetName.Name.Substring(datasetName.Name.LastIndexOf(".") + 1));
                     datasetName = enumDatasetName.Next();
                 }
                 //设置下拉框默认选项为非栅格目录(工作空间）
                 if (cmb_loadRstDataset.Items.Count > 0)
                     cmb_loadRstDataset.SelectedIndex = 0;
+                comboBox_B3.SelectedIndex = 0;
+                comboBox_B4.SelectedIndex = 0;
+                comboBox_B5.SelectedIndex = 0;
             }
             else
             {
@@ -253,16 +265,28 @@ namespace MapControlApplication1
                 //清除下拉框的选项
                 cmb_loadRstDataset.Items.Clear();
                 cmb_loadRstDataset.Text = "";
+                comboBox_B3.Items.Clear();
+                comboBox_B4.Items.Clear();
+                comboBox_B5.Items.Clear();
+                comboBox_B3.Text="";
+                comboBox_B4.Text = "";
+                comboBox_B5.Text = "";
                 //循环遍历读取每一行记录
                 while ((pRow = cursor.NextRow()) != null)
                 {
                     int idxName = pRow.Fields.FindField ("NAME");
-                    cmb_loadRstDataset.Items.Add(pRow.get_Value (idxName).ToString()); 
+                    cmb_loadRstDataset.Items.Add(pRow.get_Value (idxName).ToString());
+                    comboBox_B3.Items.Add(pRow.get_Value(idxName).ToString());
+                    comboBox_B4.Items.Add(pRow.get_Value(idxName).ToString());
+                    comboBox_B5.Items.Add(pRow.get_Value(idxName).ToString());
                 }
                 //设置默认选项
                 if (cmb_loadRstDataset.Items.Count > 0)
                 {
                     cmb_loadRstDataset.SelectedIndex = 0;
+                    comboBox_B3.SelectedIndex = 0;
+                    comboBox_B4.SelectedIndex = 0;
+                    comboBox_B5.SelectedIndex = 0;
                 }
                 //释放内存空间
                 System.Runtime.InteropServices.Marshal.ReleaseComObject(cursor) ; 
@@ -1014,102 +1038,211 @@ namespace MapControlApplication1
         }
 
 
+        //生成新的遥感图像的范本
+        private void CalculateNDVI_2(IRasterLayer inputLayer1,IRasterLayer inputLayer2)
+        {
+            try
+            {
+
+                //打开存储NDVI图像的文件夹路径
+                IWorkspaceFactory workspaceFact = new RasterWorkspaceFactoryClass();
+                //暂时这样 我赶时间
+                IRasterWorkspace2 rasterWs = workspaceFact.OpenFromFile(@"e:\Img", 0) as IRasterWorkspace2;
+                if (inputLayer1 is IRasterLayer && inputLayer2 is IRasterLayer)
+                {
+                    IRasterLayer rstLayer = inputLayer1 as IRasterLayer;
+                    IRasterLayer lakeLayer = inputLayer2 as IRasterLayer;
+                    if (rstLayer.BandCount == 1)
+                    {
+                        IRaster2 raster = rstLayer.Raster as IRaster2;
+                        IRaster2 lakeRaster = lakeLayer.Raster as IRaster2;
+                        IRasterProps rasterProps = raster as IRasterProps;
+                        //定义raster dataset的空间参考
+                        ISpatialReference sr = rasterProps.SpatialReference;
+                        //define the origin for the raster dataset, lower left corner
+                        IPoint origin = new PointClass();
+                        origin.PutCoords(rasterProps.Extent.XMin, rasterProps.Extent.YMin);
+                        //define the dimensions of the raster dataset
+                        int width = rasterProps.Width;
+                        int height = rasterProps.Height;
+                        double xCell = rasterProps.MeanCellSize().X;
+                        double yCell = rasterProps.MeanCellSize().Y;
+                        int NumBand = 1;//this is the number of bands the raster dataset contains
+                        //create a raster dataset in TIFF format
+                        IRasterDataset2 rasterDsNdvi = rasterWs.CreateRasterDataset("ndvi_pixelblock.tif", "TIFF", origin, width, height, xCell, yCell, NumBand, rstPixelType.PT_SHORT, sr, true) as IRasterDataset2;
+                        //以上的意思就是模仿输入图层 创造一个空的栅格数据集
+                        IRaster2 raster2ndvi = rasterDsNdvi.CreateFullRaster() as IRaster2;
+                        //create a raster cursor with a system-optimized pixel block size by passing a null 128*128
+                        IRasterCursor rasterCursorndvi = raster2ndvi.CreateCursorEx(null);
+                        //loop through each band and pixel block
+                        IPixelBlock3 pixelblock3ndvi = null;
+                        IRasterEdit rasterEditndvi = raster2ndvi as IRasterEdit;
+
+                        //获取输入图层的rasterDataset
+                        IRasterDataset2 rasterDs = raster.RasterDataset as IRasterDataset2;
+                        IRaster2 raster2 = rasterDs.CreateFullRaster() as IRaster2;//
+                        IRasterCursor rasterCursor = raster2.CreateCursorEx(null);//
+
+                        IRasterDataset2 rasterDslake = lakeRaster.RasterDataset as IRasterDataset2;
+                        IRaster2 raster2lake = rasterDslake.CreateFullRaster() as IRaster2;//
+                        IRasterCursor rasterCursorlake = raster2lake.CreateCursorEx(null);//
+                        //loop through each band and pixel block
+                        IPixelBlock3 pixelblock3 = null;
+                        IPixelBlock3 pixelblock5 = null;
+                        long blockwidth = 0;
+                        long blockheight = 0;
+                        System.Array pixels2;
+                        System.Array pixels3;
+                        System.Array pixelsndvi;
+                        IPnt tlcndvi = null;
+                        //object v;
+                        do
+                        {
+                            pixelblock3 = rasterCursor.PixelBlock as IPixelBlock3;
+                            pixelblock5 = rasterCursorlake.PixelBlock as IPixelBlock3;
+                            pixelblock3ndvi = rasterCursorndvi.PixelBlock as IPixelBlock3;
+                            blockwidth = pixelblock3.Width;
+                            blockheight = pixelblock3.Height;
+                            pixels2 = pixelblock3.get_PixelData(0) as System.Array;//输入1的第一波段
+                            pixels3 = pixelblock5.get_PixelData(0) as System.Array;//输入2的第一波段
+                            pixelsndvi = pixelblock3ndvi.get_PixelData(0) as System.Array;
+                   
+   
+                            for (long i = 0; i < blockwidth; i++)
+                            {
+                                for (long j = 0; j < blockheight; j++)
+                                {
+   
+
+                                    Int16 f2 = 0;
+                                    Int16 f3 = 0;
+                                    Int16.TryParse(pixels2.GetValue(i, j).ToString(), out f2);
+                                    Int16.TryParse(pixels3.GetValue(i, j).ToString(), out f3);
+                                    Int16 ndvi = 0;
+                                    if (f2>40&&f3>0&&f3<20)
+                                    {
+                                        ndvi = 128;
+                                    }
+     
+                                    pixelsndvi.SetValue(ndvi, i, j);//set 1*1pixel value in block
+                                }
+                            }
+
+                            pixelblock3ndvi.set_PixelData(0, pixelsndvi);//set block value ,the 0 band
+                            //write back to the raster
+                            tlcndvi = rasterCursorndvi.TopLeft;
+                            rasterEditndvi.Write(tlcndvi, pixelblock3ndvi as IPixelBlock);
+                        } while (rasterCursor.Next() && rasterCursorlake.Next() && rasterCursorndvi.Next());
+                        //raster edit ndvi refresh
+                        rasterEditndvi.Refresh();
+                        //save result to a RasterLayer named NDVI
+                        IRasterLayer resLayer = new RasterLayerClass();
+                        resLayer.CreateFromRaster(raster2ndvi as IRaster);
+                        resLayer.SpatialReference = sr;
+                        resLayer.Name = "NDVI";
+                        //将此单波段用灰度显示 并按照最大最小值拉伸
+                        IRasterStretchColorRampRenderer grayStretch = null;
+                        if (resLayer.Renderer is IRasterStretchColorRampRenderer)
+                        {
+                            grayStretch = resLayer.Renderer as IRasterStretchColorRampRenderer;
+                        }
+                        else
+                        {
+                            grayStretch = new RasterStretchColorRampRendererClass();
+                        }
+                        IRasterStretch2 rstStr2 = grayStretch as IRasterStretch2;
+                        rstStr2.StretchType = esriRasterStretchTypesEnum.esriRasterStretch_MinimumMaximum;//最大最小值拉伸
+                        resLayer.Renderer = grayStretch as IRasterRenderer;
+                        resLayer.Renderer.Update();
+                        this.axMapControl1.AddLayer(resLayer, 0);
+                        this.axMapControl1.ActiveView.Refresh();
+                        this.axTOCControl1.Update();
+                        iniCmbItems();
+                    }//end if 6 bands
+                }//end if rasterLayer
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+            }
+        }
+
+        
+
+
         public static void funColorForRaster_Classify(IRasterLayer pRasterLayer)
         {
             IRasterClassifyColorRampRenderer ClassifyColor = new RasterClassifyColorRampRendererClass();
             IRasterRenderer RasterRender = ClassifyColor as IRasterRenderer;
             RasterRender.Raster = pRasterLayer.Raster;
-            RasterRender.Update();
 
             //断点设置  
-            ClassifyColor.ClassCount = 6;
+            ClassifyColor.ClassCount = 2;
             ClassifyColor.set_Break(0, -1);
             ClassifyColor.set_Break(1, 40);
-            ClassifyColor.set_Break(2, 60);
-            ClassifyColor.set_Break(3, 80);
-            ClassifyColor.set_Break(4, 100);
-            ClassifyColor.set_Break(5, 120);
-            ClassifyColor.set_Break(6, 140);
+            ClassifyColor.set_Break(2, 255);
 
             //各个分类的颜色设置  
             IFillSymbol Symbol = new SimpleFillSymbolClass() as IFillSymbol;
             IRgbColor tColor = new RgbColorClass();  
-            tColor.Red = 135;//天蓝色  
-            tColor.Green = 206;  
-            tColor.Blue = 235;
+            tColor.Red = 0;
+            tColor.Green = 0;  
+            tColor.Blue = 0;
             Symbol.Color = tColor;
             ClassifyColor.set_Symbol(0, Symbol as ISymbol);
-            tColor.Red = 135;//天蓝色  
-            tColor.Green = 206;
-            tColor.Blue = 124;
+            tColor.Red = 0;
+            tColor.Green = 255;
+            tColor.Blue = 0;
             Symbol.Color = tColor;
             ClassifyColor.set_Symbol(1, Symbol as ISymbol);
-            tColor.Red = 100;//天蓝色  
-            tColor.Green = 206;
-            tColor.Blue = 103;
-            Symbol.Color = tColor;
-            ClassifyColor.set_Symbol(2, Symbol as ISymbol);
-            tColor.Red = 70;//天蓝色  
-            tColor.Green = 220;
-            tColor.Blue = 60;
-            Symbol.Color = tColor;
-            ClassifyColor.set_Symbol(3, Symbol as ISymbol);
-            tColor.Red = 60;//天蓝色  
-            tColor.Green = 236;
-            tColor.Blue = 50;
-            Symbol.Color = tColor;
-            ClassifyColor.set_Symbol(4, Symbol as ISymbol);
-            tColor.Red = 35;//天蓝色  
-            tColor.Green = 255;
-            tColor.Blue = 50;
-            Symbol.Color = tColor;
-            ClassifyColor.set_Symbol(5, Symbol as ISymbol);
+           
 
             pRasterLayer.Renderer = RasterRender;
 
-            //label的设置,一定要放在RasterLayer.Renderer = RasterRender这句后面，否则无效  
-            string str1 = "";
-            string str2 = "";
-            string str3 = "";
-            string str4 = "";
-            string str5 = "";
-            ClassifyColor.set_Label(0, "-1 - " + str1);
-            ClassifyColor.set_Label(1, str1 + " - " + str2);
-            ClassifyColor.set_Label(2, str2 + " - " + str3);
-            ClassifyColor.set_Label(3, str3 + " - " + str4);
-            ClassifyColor.set_Label(4, str4 + " - " + str5);
-            ClassifyColor.set_Label(5, str5 + " - 1");
 
-            ILayerEffects layereffects = pRasterLayer as ILayerEffects;//栅格的半透明显示  
-            layereffects.Transparency = 50;  
+            ClassifyColor.set_Label(0,"");
+            ClassifyColor.set_Label(1, "蓝藻");
         }
-        
+         
 
-        //栅格图像重新渲染测试
+        //蓝藻功能的B4闭值设定检测实现
         private void button1_Click(object sender, EventArgs e)
         {
             this.Cursor = Cursors.WaitCursor;//单击时修改鼠标光标形状
             try
             {
-                IMap map = axMapControl1.Map;
-                int layerCount = map.LayerCount;
-                IRasterLayer rstLayer = null;
-                //根据图层名获取图层
-                for (int i = 0; i < layerCount; i++)
-                {
-                    IRasterLayer tmpLayer = map.get_Layer(i) as IRasterLayer;
-                    if (tmpLayer.Name == cmb_statisticsLayer.Text)
-                    {
-                        rstLayer = tmpLayer;
-                        break;
-                    }
-                }
-                //获取栅格图层光谱波段集合
-                IRaster2 raster2 = rstLayer.Raster as IRaster2;
-                IRasterDataset rstDataset = raster2.RasterDataset;
-                IRasterBandCollection rstBandColl = rstDataset as IRasterBandCollection;
+                ILayer layer, layerLake = null;
 
-                funColorForRaster_Classify(rstLayer);
+                string rstDatasetName = comboBox_B4.SelectedItem.ToString();
+                string lakeDatasetName = comboBox_B5.SelectedItem.ToString();
+                //接口转换IRasterWorkspaceEx
+                IRasterWorkspaceEx workspaceEx = (IRasterWorkspaceEx)workspace;
+                //获取栅格数据集
+                IRasterDataset rasterDataset = workspaceEx.OpenRasterDataset(rstDatasetName);
+                IRasterDataset rasterDataset2 = workspaceEx.OpenRasterDataset(lakeDatasetName);
+                //利用栅格目录项创建栅格图层
+                IRasterLayer rasterLayer = new RasterLayerClass(); //IRasterLayer:引入DataSourceRaster
+                rasterLayer.CreateFromDataset(rasterDataset);
+                layer = rasterLayer as ILayer;
+                //将图层加载至MapControl中，并缩放到当前图层
+                layer.Name = "B4";
+                IRasterLayer rasterLayer2 = new RasterLayerClass(); //IRasterLayer:引入DataSourceRaster
+                rasterLayer2.CreateFromDataset(rasterDataset2);
+                layerLake = rasterLayer2 as ILayer;
+                //将图层加载至MapControl中，并缩放到当前图层
+                layerLake.Name = "B5";
+                //axMapControl1.AddLayer(layer);
+                //axMapControl1.ActiveView.Extent = layer.AreaOfInterest;
+                //axMapControl1.ActiveView.Refresh();
+                //axTOCControl1.Update();
+
+           
+                CalculateNDVI_2(layer as IRasterLayer, layerLake as IRasterLayer);
+
+                //funColorForRaster_Classify(rstLayer);
 
             }
             catch (System.Exception ex)//异常处理
