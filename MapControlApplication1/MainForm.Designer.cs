@@ -155,6 +155,9 @@ namespace MapControlApplication1
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
+            this.comboBox_B5 = new System.Windows.Forms.ComboBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.comboBox_B4 = new System.Windows.Forms.ComboBox();
             this.label30 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.comboBox_B3 = new System.Windows.Forms.ComboBox();
@@ -162,9 +165,11 @@ namespace MapControlApplication1
             this.cms_TOCRightMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmi_zoomToLayer = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_deleteLayer = new System.Windows.Forms.ToolStripMenuItem();
-            this.label33 = new System.Windows.Forms.Label();
-            this.comboBox_B4 = new System.Windows.Forms.ComboBox();
-            this.comboBox_B5 = new System.Windows.Forms.ComboBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.textBoxTS = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
+            this.comboBoxLan = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axMapControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axToolbarControl1)).BeginInit();
@@ -1402,6 +1407,11 @@ namespace MapControlApplication1
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.comboBoxLan);
+            this.tabPage5.Controls.Add(this.button15);
+            this.tabPage5.Controls.Add(this.button1);
+            this.tabPage5.Controls.Add(this.textBoxTS);
+            this.tabPage5.Controls.Add(this.label34);
             this.tabPage5.Controls.Add(this.groupBox16);
             this.tabPage5.Controls.Add(this.B4闭值40判定法);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
@@ -1427,6 +1437,32 @@ namespace MapControlApplication1
             this.groupBox16.TabIndex = 2;
             this.groupBox16.TabStop = false;
             this.groupBox16.Text = "选择输入";
+            // 
+            // comboBox_B5
+            // 
+            this.comboBox_B5.FormattingEnabled = true;
+            this.comboBox_B5.Location = new System.Drawing.Point(67, 93);
+            this.comboBox_B5.Name = "comboBox_B5";
+            this.comboBox_B5.Size = new System.Drawing.Size(128, 20);
+            this.comboBox_B5.TabIndex = 5;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label33.Location = new System.Drawing.Point(13, 96);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(35, 12);
+            this.label33.TabIndex = 4;
+            this.label33.Text = "Band5";
+            // 
+            // comboBox_B4
+            // 
+            this.comboBox_B4.FormattingEnabled = true;
+            this.comboBox_B4.Location = new System.Drawing.Point(67, 57);
+            this.comboBox_B4.Name = "comboBox_B4";
+            this.comboBox_B4.Size = new System.Drawing.Size(128, 20);
+            this.comboBox_B4.TabIndex = 3;
             // 
             // label30
             // 
@@ -1458,11 +1494,11 @@ namespace MapControlApplication1
             // 
             // B4闭值40判定法
             // 
-            this.B4闭值40判定法.Location = new System.Drawing.Point(73, 148);
+            this.B4闭值40判定法.Location = new System.Drawing.Point(141, 148);
             this.B4闭值40判定法.Name = "B4闭值40判定法";
             this.B4闭值40判定法.Size = new System.Drawing.Size(75, 23);
             this.B4闭值40判定法.TabIndex = 0;
-            this.B4闭值40判定法.Text = "button1";
+            this.B4闭值40判定法.Text = "人工判定";
             this.B4闭值40判定法.UseVisualStyleBackColor = true;
             this.B4闭值40判定法.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -1488,31 +1524,50 @@ namespace MapControlApplication1
             this.tsmi_deleteLayer.Text = "删除图层";
             this.tsmi_deleteLayer.Click += new System.EventHandler(this.tsmi_deleteLayer_Click);
             // 
-            // label33
+            // label34
             // 
-            this.label33.AutoSize = true;
-            this.label33.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label33.Location = new System.Drawing.Point(13, 96);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(35, 12);
-            this.label33.TabIndex = 4;
-            this.label33.Text = "Band5";
+            this.label34.AutoSize = true;
+            this.label34.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label34.Location = new System.Drawing.Point(19, 153);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(29, 12);
+            this.label34.TabIndex = 6;
+            this.label34.Text = "闭值";
             // 
-            // comboBox_B4
+            // textBoxTS
             // 
-            this.comboBox_B4.FormattingEnabled = true;
-            this.comboBox_B4.Location = new System.Drawing.Point(67, 57);
-            this.comboBox_B4.Name = "comboBox_B4";
-            this.comboBox_B4.Size = new System.Drawing.Size(128, 20);
-            this.comboBox_B4.TabIndex = 3;
+            this.textBoxTS.Location = new System.Drawing.Point(73, 149);
+            this.textBoxTS.Name = "textBoxTS";
+            this.textBoxTS.Size = new System.Drawing.Size(62, 21);
+            this.textBoxTS.TabIndex = 7;
             // 
-            // comboBox_B5
+            // button1
             // 
-            this.comboBox_B5.FormattingEnabled = true;
-            this.comboBox_B5.Location = new System.Drawing.Point(67, 93);
-            this.comboBox_B5.Name = "comboBox_B5";
-            this.comboBox_B5.Size = new System.Drawing.Size(128, 20);
-            this.comboBox_B5.TabIndex = 5;
+            this.button1.Location = new System.Drawing.Point(141, 255);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "分层设色";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(141, 203);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(75, 23);
+            this.button15.TabIndex = 9;
+            this.button15.Text = "自动判定";
+            this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
+            // 
+            // comboBoxLan
+            // 
+            this.comboBoxLan.FormattingEnabled = true;
+            this.comboBoxLan.Location = new System.Drawing.Point(21, 255);
+            this.comboBoxLan.Name = "comboBoxLan";
+            this.comboBoxLan.Size = new System.Drawing.Size(114, 20);
+            this.comboBoxLan.TabIndex = 6;
             // 
             // MainForm
             // 
@@ -1578,6 +1633,7 @@ namespace MapControlApplication1
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
             this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
             this.groupBox16.ResumeLayout(false);
             this.groupBox16.PerformLayout();
             this.cms_TOCRightMenu.ResumeLayout(false);
@@ -1718,6 +1774,11 @@ namespace MapControlApplication1
         private System.Windows.Forms.ComboBox comboBox_B5;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.ComboBox comboBox_B4;
+        private System.Windows.Forms.TextBox textBoxTS;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.ComboBox comboBoxLan;
+        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Button button1;
     }
 }
 
